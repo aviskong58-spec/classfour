@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src * 'unsafe-inline'; script-src * 'unsafe-inline'; img-src * data: blob:; font-src * data:; media-src * data: blob:; connect-src 'none'; form-action 'none'; frame-src 'none'; object-src 'none'; base-uri 'none'">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四年级马来语学习乐园 | 马来西亚儿童语言学习</title>
+    <script src="https://image.uc.cn/s/uae/g/3n/mos-production/fontawesome-free-7.1.0-web/js/all.min.js"></script>
+    <script src="https://image.uc.cn/s/uae/g/3n/mos-production/0915/3.4.17.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Nunito:wght@400;700&display=swap');
+        
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #FF9800;
+            --accent-color: #2196F3;
+            --light-yellow: #FFF9C4;
+            --light-blue: #E3F2FD;
+            --light-green: #E8F5E9;
+            --light-orange: #FFF3E0;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        .comic-font {
+            font-family: 'Comic Neue', cursive;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #4CAF50 0%, #2196F3 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .theme-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .activity-card {
+            border-left: 5px solid;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .game-card {
+            border-top: 5px solid;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .bounce-animation {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* 自定义时间轴样式 */
+        .custom-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .custom-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .custom-timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .custom-timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary-color);
+        }
+        
+        /* 词汇卡片翻转效果 */
+        .vocab-card {
+            perspective: 1000px;
+            height: 180px;
+        }
+        
+        .vocab-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        .vocab-card.flipped .vocab-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .vocab-card-front, .vocab-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .vocab-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+<script>
+!(function(j,a,g){j.__itrace_conf = {bid: 'kt40h0wl-koyh4af8',rel: '', uid: 'f1339338-7983-4539-91c9-d78a0be74dd0' ,  spa: true, plugins:['jserror','interface','perf','resource','flow','blank']};var b = a.createElement("script");var d = a.getElementsByTagName("script")[0];b.type = "text/javascript";b.crossorigin = true;b.async = true;b.onload = function(){j.__itrace && j.__itrace.setReady()};d.parentNode.insertBefore(b,d);b.src = g})(window, document, "https://g.alicdn.com/woodpeckerx/itrace-next/itrace.iife.js")
+</script>
+</head>
+<body class="bg-gray-50">
+    <!-- 导航栏 -->
+    <nav class="bg-white shadow-md py-4 sticky top-0 z-10">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-book-open text-3xl text-green-500 mr-3"></i>
+                <h1 class="comic-font text-2xl font-bold text-blue-600">马来语学习乐园</h1>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#topics" class="text-gray-700 hover:text-green-600 font-medium">学习主题</a>
+                <a href="#activities" class="text-gray-700 hover:text-orange-500 font-medium">互动活动</a>
+                <a href="#resources" class="text-gray-700 hover:text-blue-500 font-medium">学习资源</a>
+                <a href="#games" class="text-gray-700 hover:text-purple-500 font-medium">趣味游戏</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="hero-gradient text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center mb-6">
+                <i class="fas fa-globe-asia text-6xl bounce-animation"></i>
+            </div>
+            <h1 class="comic-font text-4xl md:text-5xl font-bold mb-4">欢迎来到四年级马来语学习乐园！</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">专为9-10岁儿童设计的趣味马来语学习平台，通过游戏、活动和真实场景练习，让语言学习变得有趣又有效！</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <div class="bg-white text-green-600 px-6 py-3 rounded-full font-bold shadow-lg pulse-animation">
+                    <i class="fas fa-chalkboard-teacher mr-2"></i>实用交际导向
+                </div>
+                <div class="bg-white text-blue-600 px-6 py-3 rounded-full font-bold shadow-lg pulse-animation" style="animation-delay: 0.5s;">
+                    <i class="fas fa-gamepad mr-2"></i>游戏化学习
+                </div>
+                <div class="bg-white text-orange-500 px-6 py-3 rounded-full font-bold shadow-lg pulse-animation" style="animation-delay: 1s;">
+                    <i class="fas fa-palette mr-2"></i>文化融合体验
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 学习主题介绍 -->
+    <section id="topics" class="py-12 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="comic-font text-3xl md:text-4xl font-bold text-blue-700 mb-4">
+                    <i class="fas fa-star mr-3 text-yellow-500"></i>核心学习主题
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">四年级马来语学习围绕五大主题展开，紧密结合儿童的日常生活经验</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 主题1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" style="border-top: 6px solid #4CAF50;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-comments text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">日常交际与生活场景</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">学习在真实生活场景中使用马来语进行交流</p>
+                    <div class="flex flex-wrap">
+                        <span class="theme-badge bg-green-100 text-green-800">认识与问候</span>
+                        <span class="theme-badge bg-green-100 text-green-800">时间日期</span>
+                        <span class="theme-badge bg-green-100 text-green-800">打电话</span>
+                        <span class="theme-badge bg-green-100 text-green-800">购物</span>
+                        <span class="theme-badge bg-green-100 text-green-800">餐馆点餐</span>
+                        <span class="theme-badge bg-green-100 text-green-800">医院就诊</span>
+                    </div>
+                </div>
+                
+                <!-- 主题2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" style="border-top: 6px solid #FF9800;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-orange-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-home text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">家庭与人际关系</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">学习介绍家庭成员、朋友关系和兴趣爱好</p>
+                    <div class="flex flex-wrap">
+                        <span class="theme-badge bg-orange-100 text-orange-800">家庭成员介绍</span>
+                        <span class="theme-badge bg-orange-100 text-orange-800">朋友关系</span>
+                        <span class="theme-badge bg-orange-100 text-orange-800">兴趣爱好</span>
+                        <span class="theme-badge bg-orange-100 text-orange-800">校园生活</span>
+                    </div>
+                </div>
+                
+                <!-- 主题3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" style="border-top: 6px solid #2196F3;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-flag text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">文化与社会认知</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">了解马来西亚多元文化、节日习俗和国家象征</p>
+                    <div class="flex flex-wrap">
+                        <span class="theme-badge bg-blue-100 text-blue-800">开斋节习俗</span>
+                        <span class="theme-badge bg-blue-100 text-blue-800">农历新年</span>
+                        <span class="theme-badge bg-blue-100 text-blue-800">传统服饰</span>
+                        <span class="theme-badge bg-blue-100 text-blue-800">国家象征</span>
+                    </div>
+                </div>
+                
+                <!-- 主题4 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" style="border-top: 6px solid #9C27B0;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-book text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">文学与语言素养</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">接触民间故事、班顿诗歌和成语谚语</p>
+                    <div class="flex flex-wrap">
+                        <span class="theme-badge bg-purple-100 text-purple-800">民间故事阅读</span>
+                        <span class="theme-badge bg-purple-100 text-purple-800">班顿诗歌</span>
+                        <span class="theme-badge bg-purple-100 text-purple-800">成语谚语</span>
+                        <span class="theme-badge bg-purple-100 text-purple-800">比喻修辞</span>
+                    </div>
+                </div>
+                
+                <!-- 主题5 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 card-hover" style="border-top: 6px solid #FF5722;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-pencil-alt text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">语言技能训练</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">系统训练听说读写四项基本语言能力</p>
+                    <div class="flex flex-wrap">
+                        <span class="theme-badge bg-red-100 text-red-800">字母发音规则</span>
+                        <span class="theme-badge bg-red-100 text-red-800">拼读练习</span>
+                        <span class="theme-badge bg-red-100 text-red-800">语法问答</span>
+                        <span class="theme-badge bg-red-100 text-red-800">作文写作</span>
+                    </div>
+                </div>
+                
+                <!-- 词汇目标卡片 -->
+                <div class="bg-gradient-to-r from-green-100 to-blue-100 rounded-xl shadow-lg p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-white p-3 rounded-full mr-4">
+                            <i class="fas fa-bullseye text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">词汇量目标</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">四年级学生每学期应掌握约 <span class="font-bold text-green-700">400–500个</span> 基础词汇</p>
+                    <div class="bg-white rounded-lg p-4 mb-4">
+                        <div class="flex justify-between mb-2">
+                            <span class="text-gray-600">累计目标</span>
+                            <span class="font-bold text-blue-700">1600词量水平</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-4">
+                            <div class="bg-gradient-to-r from-green-400 to-blue-500 h-4 rounded-full" style="width: 75%"></div>
+                        </div>
+                        <div class="text-right text-sm text-gray-500 mt-1">75% 进度</div>
+                    </div>
+                    <p class="text-sm text-gray-600">合理预期目标，通过日常练习逐步达成</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 互动活动示例 -->
+    <section id="activities" class="py-12 bg-gradient-to-b from-orange-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="comic-font text-3xl md:text-4xl font-bold text-orange-700 mb-4">
+                    <i class="fas fa-users mr-3 text-orange-500"></i>互动活动示例
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">通过游戏化、情境化的活动，让儿童在真实交流中学习马来语</p>
+            </div>
+            
+            <div class="custom-timeline max-w-4xl mx-auto">
+                <!-- 活动1 -->
+                <div class="custom-timeline-item">
+                    <div class="activity-card bg-white p-6 shadow-md" style="border-left-color: #4CAF50;">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-green-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-gamepad text-green-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">课堂互动游戏</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">通过趣味游戏强化语音识别和词汇记忆</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-800 mb-2">拼音挑战赛</h4>
+                                <p class="text-gray-600 text-sm">开展"猜声调""写拼音""挂衣服"等形式的游戏</p>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-800 mb-2">配对与找词模式</h4>
+                                <p class="text-gray-600 text-sm">"Match Me"图像词语配对，"Find Me"四选一找图</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-yellow-800 mb-2">主题分类记忆游戏</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">点水果游戏</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">猜动物叫声</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">颜色气球游戏</span>
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm">形状辨认游戏</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 活动2 -->
+                <div class="custom-timeline-item">
+                    <div class="activity-card bg-white p-6 shadow-md" style="border-left-color: #FF9800;">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-orange-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-handshake text-orange-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">小组合作与项目式学习</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">通过合作任务培养团队协作和语言表达能力</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-bold text-gray-800 mb-2">小组信息交换任务</h4>
+                            <div class="bg-gray-100 p-4 rounded-lg mb-3">
+                                <p class="text-gray-700 mb-2">句型练习：<span class="font-bold text-green-700">"Suka makan apa?"</span> → <span class="font-bold text-blue-700">"Saya suka pisang."</span></p>
+                                <p class="text-gray-600 text-sm">流程：热身 → 教师示范 → 组内轮流提问 → 派代表汇报</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-purple-800 mb-2">项目式创作</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">微电影拍摄</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">戏剧观摩赛</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">改编民间故事</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">文化短剧表演</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 活动3 -->
+                <div class="custom-timeline-item">
+                    <div class="activity-card bg-white p-6 shadow-md" style="border-left-color: #2196F3;">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-blue-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-theater-masks text-blue-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">角色扮演与情境模拟</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">在模拟真实场景中练习日常对话和社交礼仪</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-800 mb-2">模拟商店购物</h4>
+                                <p class="text-gray-600 text-sm mb-2">设置"Kedai Runcit"场景，练习购物对话：</p>
+                                <ul class="text-gray-700 text-sm space-y-1">
+                                    <li><i class="fas fa-shopping-cart text-blue-500 mr-1"></i> "Ini berapa?" (这个多少钱？)</li>
+                                    <li><i class="fas fa-shopping-cart text-blue-500 mr-1"></i> "Saya nak beli ini." (我想买这个)</li>
+                                    <li><i class="fas fa-shopping-cart text-blue-500 mr-1"></i> "Boleh murah sikit tak?" (可以便宜点吗？)</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-800 mb-2">开斋节礼仪模拟</h4>
+                                <p class="text-gray-600 text-sm mb-2">学习传统节日问候礼节：</p>
+                                <ul class="text-gray-700 text-sm space-y-1">
+                                    <li><i class="fas fa-hands text-green-500 mr-1"></i> 合掌致意 (Salam Aidilfitri)</li>
+                                    <li><i class="fas fa-hands text-green-500 mr-1"></i> 向长辈请安</li>
+                                    <li><i class="fas fa-hands text-green-500 mr-1"></i> 节日祝福语练习</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 活动4 -->
+                <div class="custom-timeline-item">
+                    <div class="activity-card bg-white p-6 shadow-md" style="border-left-color: #9C27B0;">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-purple-100 p-2 rounded-lg mr-4">
+                                <i class="fas fa-mobile-alt text-purple-600 text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">技术辅助与创新教学法</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">利用科技工具增强学习趣味性和互动性</p>
+                        
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                                <thead class="bg-purple-100">
+                                    <tr>
+                                        <th class="py-3 px-4 text-left text-purple-800 font-bold">应用名称</th>
+                                        <th class="py-3 px-4 text-left text-purple-800 font-bold">平台</th>
+                                        <th class="py-3 px-4 text-left text-purple-800 font-bold">功能亮点</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-3 px-4 font-medium">My BM Quiz</td>
+                                        <td class="py-3 px-4">Android</td>
+                                        <td class="py-3 px-4">游戏化闯关，覆盖小一至小六语法练习，中文界面易懂</td>
+                                    </tr>
+                                    <tr class="border-b border-gray-200">
+                                        <td class="py-3 px-4 font-medium">马来文很简单！</td>
+                                        <td class="py-3 px-4">iOS</td>
+                                        <td class="py-3 px-4">支持华语界面，含拼字、配对、挑战、多人对战模式</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 px-4 font-medium">Flashcards Malay Lesson</td>
+                                        <td class="py-3 px-4">iOS</td>
+                                        <td class="py-3 px-4">提供字母、数字、身体部位等分类闪卡，内置记忆游戏</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 相关图片展示 -->
+    <section id="resources" class="py-12 bg-gradient-to-b from-green-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="comic-font text-3xl md:text-4xl font-bold text-green-700 mb-4">
+                    <i class="fas fa-images mr-3 text-green-500"></i>学习资源与图片
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">高质量、无水印的视觉素材，帮助构建沉浸式语言学习环境</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 图片1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="aspect-ratio: 1 / 1; overflow-hidden">
+                        <img src="https://agent.qianwen.com/mos/df68ca1cff86419b86bee388bb87bf4f/ae6f97e05297a7d47934e37817b53213" alt="马来西亚小学教室中，四年级学生在马来语课堂上与老师合影，手持学习材料，黑板上有教学内容，场景真实且无水印" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">四年级马来语课堂实景</h3>
+                        <p class="text-gray-600 mb-4">真实课堂场景，展现师生互动氛围，黑板可见马来语书写内容，极具代入感。</p>
+                        <div class="flex items-center text-green-600">
+                            <i class="fas fa-chalkboard-teacher mr-2"></i>
+                            <span class="font-medium">课堂互动教学</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 图片2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="aspect-ratio: 1 / 1; overflow-hidden">
+                        <img src="https://agent.qianwen.com/mos/df68ca1cff86419b86bee388bb87bf4f/3beff20eb16041eb0d7b47a29b902447" alt="图片展示开斋节庆祝场景，男女儿童身穿传统服饰合掌致意，背景有月亮、星星和灯笼，体现节日礼仪与文化元素" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">开斋节礼仪教学</h3>
+                        <p class="text-gray-600 mb-4">描绘开斋节期间儿童学习传统问候礼节的情景，适合用于节日文化模块教学。</p>
+                        <div class="flex items-center text-orange-600">
+                            <i class="fas fa-hands mr-2"></i>
+                            <span class="font-medium">节日文化学习</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 图片3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="aspect-ratio: 1 / 1; overflow-hidden">
+                        <img src="https://agent.qianwen.com/mos/df68ca1cff86419b86bee388bb87bf4f/7b1ea45f67e739501089e636f7315cd8" alt="图片展示马来西亚传统舞蹈表演，舞者身着民族服饰在舞台上演出，背景有'Repah Mahkota'字样，符合文化活动场景" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">传统舞蹈展示</h3>
+                        <p class="text-gray-600 mb-4">专业舞蹈表演画面，可用于介绍民族文化多样性与艺术表达。</p>
+                        <div class="flex items-center text-purple-600">
+                            <i class="fas fa-music mr-2"></i>
+                            <span class="font-medium">传统文化艺术</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 图片4 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                    <div class="aspect-ratio: 1 / 1; overflow-hidden">
+                        <img src="https://agent.qianwen.com/mos/df68ca1cff86419b86bee388bb87bf4f/3dce81eec47357b14ebe8c75f9d55ff9" alt="两人在工作室进行蜡染工艺制作，环境有'Studio Kraft'标识，符合手工课场景，但无明确峇迪或马来语元素，且无水印" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">峇迪制作手工课</h3>
+                        <p class="text-gray-600 mb-4">展示蜡染制作过程的工作室场景，适合作为工艺课程背景图，结合马来语教学。</p>
+                        <div class="flex items-center text-blue-600">
+                            <i class="fas fa-paint-brush mr-2"></i>
+                            <span class="font-medium">手工艺术融合</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 推荐图库卡片 -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow-lg p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-white p-3 rounded-full mr-4">
+                            <i class="fas fa-search text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">推荐图像搜索关键词</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">在免费图库中检索更多学习资源：</p>
+                    <div class="space-y-3">
+                        <div class="bg-white rounded-lg p-3">
+                            <p class="text-sm font-medium text-gray-800">马来西亚 小学课堂 四年级 马来语教学</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-3">
+                            <p class="text-sm font-medium text-gray-800">马来西亚儿童 学习马来语 课堂互动</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-3">
+                            <p class="text-sm font-medium text-gray-800">马来西亚 开斋节 礼仪教学</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-3">
+                            <p class="text-sm font-medium text-gray-800">马来西亚 传统服饰 巴迪衫 教学</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 图库平台推荐 -->
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl shadow-lg p-6 card-hover">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-white p-3 rounded-full mr-4">
+                            <i class="fas fa-photo-video text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">推荐图库平台</h3>
+                    </div>
+                    <p class="text-gray-700 mb-4">高质量、免版权的图片资源平台：</p>
+                    <div class="space-y-3">
+                        <a href="https://pixabay.com/" class="block bg-white rounded-lg p-3 hover:shadow-md transition">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-800">Pixabay</span>
+                                <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">CC0许可</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">无需署名，资源丰富</p>
+                        </a>
+                        <a href="https://www.pexels.com/" class="block bg-white rounded-lg p-3 hover:shadow-md transition">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-800">Pexels</span>
+                                <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded">高清摄影</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">免版权，质量高</p>
+                        </a>
+                        <a href="https://unsplash.com/" class="block bg-white rounded-lg p-3 hover:shadow-md transition">
+                            <div class="flex justify-between items-center">
+                                <span class="font-medium text-gray-800">Unsplash</span>
+                                <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded">艺术风格</span>
+                            </div>
+                            <p class="text-sm text-gray-600 mt-1">现代感强，设计精美</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 趣味游戏与练习 -->
+    <section id="games" class="py-12 bg-gradient-to-b from-purple-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="comic-font text-3xl md:text-4xl font-bold text-purple-700 mb-4">
+                    <i class="fas fa-puzzle-piece mr-3 text-purple-500"></i>趣味游戏与练习
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">通过互动游戏巩固学习成果，让语言练习变得有趣</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 词汇翻转卡片游戏 -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-3">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-6">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-sync-alt text-purple-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">词汇翻转卡片游戏</h3>
+                        </div>
+                        <p class="text-gray-700 mb-6">点击卡片查看马来语词汇的中文意思，练习基础词汇记忆</p>
+                        
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="vocab-cards-container">
+                            <!-- 词汇卡片将通过JavaScript动态生成 -->
+                        </div>
+                        
+                        <div class="mt-8 text-center">
+                            <button id="reset-cards" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-purple-700 transition">
+                                <i class="fas fa-redo mr-2"></i>重置所有卡片
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 多人对战游戏 -->
+                <div class="game-card bg-white p-6 shadow-lg" style="border-top-color: #FF9800;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-orange-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-trophy text-orange-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">多人对战模式</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">使用"马来文很简单！"App中的对战功能，争夺"单字王"称号</p>
+                    <div class="bg-orange-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-orange-800 mb-2">游戏特点：</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-2"></i>
+                                <span>支持华语界面，易于操作</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-2"></i>
+                                <span>含拼字、配对、挑战多种模式</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-orange-500 mr-2"></i>
+                                <span>免费使用（含内购选项）</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 挑战测验 -->
+                <div class="game-card bg-white p-6 shadow-lg" style="border-top-color: #4CAF50;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-medal text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">挑战测验</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">限时答题，全部答对方可获得"马来文达人"认证</p>
+                    <div class="bg-green-50 p-4 rounded-lg">
+                        <h4 class="font-bold text-green-800 mb-2">测验规则：</h4>
+                        <ul class="text-gray-700 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-clock text-green-500 mr-2"></i>
+                                <span>限时3分钟完成10道题</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-star text-green-500 mr-2"></i>
+                                <span>答对8题以上获得铜牌</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-crown text-green-500 mr-2"></i>
+                                <span>全对获得"马来文达人"称号</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- 歌曲与音乐结合 -->
+                <div class="game-card bg-white p-6 shadow-lg" style="border-top-color: #2196F3;">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-music text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">歌曲与音乐结合</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">教唱儿歌《Burung Kakak Tua》，配合节奏训练词汇记忆</p>
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <i class="fas fa-play-circle text-blue-500 text-2xl mr-3"></i>
+                            <div>
+                                <h4 class="font-bold text-blue-800">推荐儿歌：</h4>
+                                <p class="text-gray-700">《Burung Kakak Tua》传统马来儿歌</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 text-sm">通过歌曲旋律帮助记忆词汇和句型，增强学习趣味性</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学习建议 -->
+    <section class="py-12 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <h2 class="comic-font text-3xl font-bold text-blue-700 mb-4">
+                        <i class="fas fa-lightbulb mr-3 text-yellow-500"></i>综合学习建议
+                    </h2>
+                    <p class="text-gray-600 max-w-3xl mx-auto">提升四年级儿童马来语学习成效的实用策略</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-blue-50 p-5 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-white p-2 rounded-full mr-3">
+                                <i class="fas fa-tags text-blue-600"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800">环境沉浸法</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">在家中物品贴标签（buku = 书，meja = 桌子），创造自然语言环境</p>
+                    </div>
+                    
+                    <div class="bg-green-50 p-5 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-white p-2 rounded-full mr-3">
+                                <i class="fas fa-robot text-green-600"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800">技术辅助学习</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">使用Duolingo每日打卡，AI纠正发音，个性化学习路径</p>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-5 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-white p-2 rounded-full mr-3">
+                                <i class="fas fa-family text-orange-600"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800">亲子共学模式</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">与孩子一起玩"My BM Quiz"闯关游戏，增强家庭互动性</p>
+                    </div>
+                    
+                    <div class="bg-purple-50 p-5 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-white p-2 rounded-full mr-3">
+                                <i class="fas fa-utensils text-purple-600"></i>
+                            </div>
+                            <h3 class="font-bold text-gray-800">文化联结学习</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm">结合开斋节、传统市场砍价等真实场景练习对话，学以致用</p>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-5 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-graduation-cap text-orange-600 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-800">UASA评估重点提示</h3>
+                    </div>
+                    <p class="text-gray-700 mb-3">四年级马来语通过<strong>UASA统一评估系统</strong>进行标准化评估，书写能力占总分高达<strong class="text-red-600">64%</strong>，表明教学重心在于培养学生组织语言、表达思想的能力。</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-3 rounded">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-blue-700">20%</div>
+                                <div class="text-gray-600 text-sm">选择题占比</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-green-700">16%</div>
+                                <div class="text-gray-600 text-sm">简答题占比</div>
+                            </div>
+                        </div>
+                        <div class="bg-white p-3 rounded">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-orange-700">64%</div>
+                                <div class="text-gray-600 text-sm">书写题占比</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-book-open text-3xl text-green-400 mr-3"></i>
+                        <h2 class="comic-font text-2xl font-bold">马来语学习乐园</h2>
+                    </div>
+                    <p class="text-gray-400">专为马来西亚四年级儿童设计的马来语学习交流平台</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-300 hover:text-white">
+                        <i class="fab fa-youtube text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 mb-4">本内容由AI生成，可能存在错误或不准确之处。请在使用前自行核实信息的准确性。</p>
+                <p class="text-gray-500 text-sm">© 2026 四年级马来语学习乐园 | 参考资料来源于公开教育资源和教学实践案例</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition opacity-0">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 词汇卡片数据
+        const vocabData = [
+            { malay: "buku", chinese: "书", color: "bg-blue-100", textColor: "text-blue-800" },
+            { malay: "meja", chinese: "桌子", color: "bg-green-100", textColor: "text-green-800" },
+            { malay: "kerusi", chinese: "椅子", color: "bg-yellow-100", textColor: "text-yellow-800" },
+            { malay: "pen", chinese: "笔", color: "bg-red-100", textColor: "text-red-800" },
+            { malay: "guru", chinese: "老师", color: "bg-purple-100", textColor: "text-purple-800" },
+            { malay: "murid", chinese: "学生", color: "bg-pink-100", textColor: "text-pink-800" },
+            { malay: "sekolah", chinese: "学校", color: "bg-indigo-100", textColor: "text-indigo-800" },
+            { malay: "keluarga", chinese: "家庭", color: "bg-teal-100", textColor: "text-teal-800" }
+        ];
+        
+        // 初始化词汇卡片
+        function initVocabCards() {
+            const container = document.getElementById('vocab-cards-container');
+            container.innerHTML = '';
+            
+            // 打乱数组顺序
+            const shuffledVocab = [...vocabData].sort(() => Math.random() - 0.5);
+            
+            shuffledVocab.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'vocab-card cursor-pointer';
+                card.dataset.index = index;
+                
+                card.innerHTML = `
+                    <div class="vocab-card-inner">
+                        <div class="vocab-card-front ${item.color} rounded-lg flex flex-col justify-center items-center p-4 border-2 border-white shadow-md">
+                            <div class="text-3xl font-bold ${item.textColor} mb-2">${item.malay}</div>
+                            <div class="text-gray-600">点击查看中文意思</div>
+                            <div class="mt-4">
+                                <i class="fas fa-sync-alt text-gray-500"></i>
+                            </div>
+                        </div>
+                        <div class="vocab-card-back ${item.color} rounded-lg flex flex-col justify-center items-center p-4 border-2 border-white shadow-md">
+                            <div class="text-2xl font-bold ${item.textColor} mb-2">${item.chinese}</div>
+                            <div class="text-gray-700">马来语：${item.malay}</div>
+                            <div class="mt-4 text-sm text-gray-600">点击返回</div>
+                        </div>
+                    </div>
+                `;
+                
+                card.addEventListener('click', function() {
+                    this.classList.toggle('flipped');
+                });
+                
+                container.appendChild(card);
+            });
+        }
+        
+        // 重置卡片
+        document.getElementById('reset-cards').addEventListener('click', function() {
+            // 移除所有卡片的flipped类
+            document.querySelectorAll('.vocab-card').forEach(card => {
+                card.classList.remove('flipped');
+            });
+            
+            // 重新初始化卡片（打乱顺序）
+            setTimeout(initVocabCards, 300);
+        });
+        
+        // 返回顶部功能
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 平滑滚动到锚点
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            initVocabCards();
+            
+            // 添加一些动画效果
+            const cards = document.querySelectorAll('.card-hover');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
